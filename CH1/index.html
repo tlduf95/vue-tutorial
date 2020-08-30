@@ -20,6 +20,16 @@
     </ol>
 </div>
 
+<div id='app5'>
+    <p>{{ message }}</p>
+    <button v-on:click='reverseMessage'>reverseMessage</button>     
+</div>
+
+<div id='app6'>
+    <p>{{message}}</p>
+    <input v-model='message'>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
 
@@ -52,6 +62,25 @@ var app4 = new Vue ({
             { text: 'vue' },
             { text: 'vue' },
         ]
+    }
+});
+
+var app5 = new Vue ({
+    el: '#app5',
+    data: {
+        message: '메세지입니다'
+    },
+    methods: {
+        reverseMessage() {
+            this.message = this.message.split('').reverse().join('');
+        },
+    }
+});
+
+var app6 = new Vue ({
+    el: '#app6',
+    data: {
+        message: '양방향 바인딩 v-model 디렉티브입니다.'
     }
 })
 
