@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>instance</title>
+</head>
+<body>
+    <div id='app'>
+        <h1>instance @ watch</h1>
+        <h5>count : {{test}}</h5>
+        <button @click='test += 1'>add 1</button>
+    </div>
+    
+<script>
+    
+    var data = {test: 0};
+
+    var app = new Vue ({
+        el: '#app',
+        data: data,
+        created: function () {
+            console.log('test is:' + this.test);
+        }
+    });
+
+    console.log(app.test === data.test);
+    console.log(app.$data === data);
+
+    app.$watch('test', function (newVal, oldVal) {
+        console.log('이전 데이터', oldVal);
+        console.log('변경 데이터', newVal);
+    })
+
+</script>
+
+</body>
+</html>

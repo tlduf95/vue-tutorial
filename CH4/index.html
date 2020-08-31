@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title></title>
+  </head>
+  
+  <body>
+	
+	<div id="app">
+	  <h2>lifecycle</h2>
+	  <h3>개발자Console확인</h3>
+	  <button @click="toggleShow">
+		<span v-if="isShowing">Hide child</span>
+		<span v-else>Show child</span>
+	  </button>
+	  <hr>
+	  <div v-if="isShowing">
+		<app-child></app-child>
+	  </div>
+
+	  <div id="childarea" style="display:none">
+		<h4>Compoent Create!</h4>
+	  </div>
+	</div>
+
+    <script>
+		const Child = {
+		  template: '#childarea',
+		  beforeCreate() {
+			console.log("beforeCreate!");
+		  }, 
+		  created() {
+			console.log("created!");
+		  }, 
+		  beforeMount() {
+			console.log("beforeMount!");
+		  }, 
+		  mounted() {
+			console.log("mounted!");
+		  }, 
+		  beforeDestroy() {
+			console.log("beforeDestroy!");
+		  }, 
+		  destroyed() {
+			console.log("destroyed!");
+		  }
+		};
+
+		new Vue({
+		  el: '#app',
+		  data() {
+			return {
+			  isShowing: false 
+			}
+		  },
+		  methods: {
+			toggleShow() {
+			  this.isShowing = !this.isShowing;
+			}
+		  },
+		  components: {
+			appChild: Child
+		  }
+		});
+
+    </script>
+  </body>
+</html>

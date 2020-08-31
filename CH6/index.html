@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>vue.js</title>
+  </head>
+  <body>
+	<div id="app">
+		<h3>JavaScript 표현식1</h3>
+		<span>{{ number * 3 }}</span>
+		<br/>
+		<br/>
+		<br/>
+		<h3>JavaScript 표현식2(삼항연산자)</h3>
+		<span>{{ condition ? 'True' : 'False'}}</span>
+		<br/>
+		<br/>
+		<br/>
+		<h3>JavaScript 표현식3</h3>
+		<span> {{ message.split('').reverse().join('') }}</span>
+		<br/>
+		<br/>
+		<br/>
+		<h3>JavaScript 표현식4(속성 바인딩)</h3>
+		<span v-bind:id="'list-'+ addId"> {{ addId }}</span>
+	</div>
+
+    <script>
+
+	 //인스턴스 생성
+     var app = new Vue({
+	  el: '#app',
+	  data: {
+		number: 15,
+		condition: true,
+		message: 'hello world',
+		addId: 'first'
+	  }
+	 })
+	
+    </script>
+  </body>
+</html>

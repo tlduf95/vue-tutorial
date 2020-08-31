@@ -1,0 +1,15 @@
+#Creation: 컴포넌트 초기화 단계
+-BeforeCreate: 가장 먼저 실행이 됨. 인스턴스의 data, event 객체는 접근할 수 없음.
+-Create: data, event 객체가 준비 완료된 상태이므로 처리가 가능하다.
+
+#Mounting: DOM 작성 단계
+-BeforeMount: 템플릿 및 코드들이 렌더링 되기 직전에 호출됨. 거의 사용하지 않음.
+-Mounted: 컴포넌트, 템플릿, DOM이 모두 준비된 상태. 이 상태에서 ajax 처리 가능.
+
+Updating: 상태 변화로 인한 렌더링 단계
+-BeforeUpdate: 컴포넌트 상태 변화가 일어나면 다시 DOM이 렌더링 되는데 그 전에 호출.
+-Updated: 상태 변화 후 렌더링이 완료되면 실행. 여기서 상태 값이 변경되면 무한루프에 빠짐.
+
+Destruction: 소멸 단계
+-BeforeDestroy: 인스턴스 제거 직전에 호출.
+-Destroyed: 인스턴스 제거 완료 후 호출. 연관된 이벤트 리스너, 디렉디브 등이 해제.

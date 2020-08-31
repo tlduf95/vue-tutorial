@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>vue.js</title>
+  </head>
+  <body>
+	<div id="app">
+		<h3>데이터 바인딩1(기본)</h3>
+		<span>{{ message }}</span>
+		<br/>
+		<br/>
+		<br/>
+		<h3>데이터 바인딩2(v-once)</h3>
+		<span v-once>{{ message_once }}</span>
+		<br/>
+		<br/>
+		<br/>
+		<h3>데이터 바인딩3(원시)</h3>
+		<span>{{ message_not_html }}</span>
+		<br/>
+		<br/>
+		<br/>
+		<h3>데이터 바인딩4(HTML)</h3>
+		<span v-html="message_html"></span>
+		<br/>
+		<h3>데이터 바인딩5(속성)</h3>
+		<button v-bind:disabled="isButtonDisabled">Button</button>
+	</div>
+
+    <script>
+
+     var app = new Vue({
+	  el: '#app',
+	  data: {
+		message: '바인딩 테스트1',
+		message_once: '바인딩 테스트2',
+		message_not_html: '<h5>Tag(X)</h5>',
+		message_html: '<h5 style="color:#ff0000">Tag(O)</h5>',
+		isButtonDisabled: true
+	  }
+	 })
+	
+    </script>
+  </body>
+</html>

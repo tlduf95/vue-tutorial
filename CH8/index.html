@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>vue.js</title>
+  </head>
+  <body>
+	<div id="app">
+		<h3>Vue.js computed, methods</h3>
+		<div id='example'>
+			<p>original: {{message}} </p>
+			<p>Expression: {{message.split('').reverse().join('')}}</p>
+			<p>Computed: {{reversedMessage1}}</p>
+			<p>Method: {{reversedMessage2()}}</p>
+			<p><input v-model='meesage'></p>
+		</div>
+	</div>
+
+    <script>
+
+	 //인스턴스 생성
+     var app = new Vue({
+	  el: '#example',
+	  data: {
+		  message: '12345'
+	  },
+	  computed: { // 값이 변경되지 않으면 캐싱됨.
+		  reversedMessage1: function () {
+			return this.message.split('').reverse().join('');
+		  }
+	  },
+	  methods: { // 값이 항상 메소드 호출 후 반환.
+		  reversedMessage2: function () {
+			return this.message.split('').reverse().join('');
+		  }
+	  }
+	 });
+	
+    </script>
+  </body>
+</html>

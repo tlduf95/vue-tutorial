@@ -4,16 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <title>Document</title>
+    <title>Component</title>
 </head>
 <body>
-    <div>
-        <h1>Components</h1>
+    <div id='parCom'>
+        <h1>Component</h1>
         <ol>
-            
+            <todo-item
+                v-for='item in groceryList'
+                v-bind:todo='item'
+                v-bind:key='item.id'>
+            </todo-item>
         </ol>
     </div>
 
+<script>
+Vue.component('todo-item', {
+    props: ['todo'],
+    template: '<li>{{todo.text}}</li>'
+});
+
+    var parCom = new Vue ({
+        el: '#parCom',
+        data: {
+            groceryList: [
+                { id:0, text: 'A'},
+                { id:1, text: 'B'},
+                { id:2, text: 'C'},
+                { id:3, text: 'D'},
+            ]
+        }
+    });
+</script>
 
 </body>
 </html>
