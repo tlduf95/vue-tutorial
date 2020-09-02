@@ -14,7 +14,7 @@
 	  <h3>개발자Console확인</h3>
 	  <button @click="toggleShow">
 		<span v-if="isShowing">Hide child</span>
-		<span v-else>Show child</span>
+		<span v-else>Show child</span> <!-- v-if 아래에 위치 else문과 같다 -->
 	  </button>
 	  <hr>
 	  <div v-if="isShowing">

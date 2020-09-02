@@ -1,33 +1,40 @@
 <div id='app'>
-    {{ message }}
+    {{ message }} <!-- 선언적 렌더링 -->
 </div>
 
 <div id='app2'>
-    <span v-bind:title='message'>
+    <span v-bind:title='message'> <!-- title에 message를 데이터바인딩 -->
         타이틀 메시지가 표시되었습니다.
     </span> 
 </div>
 
 <div id='app3'>
-    <p v-if='seen'>조건문입니다.</p>
+    <p v-if='seen'>조건문입니다.</p> <!-- seen의 값에 따라 DOM 표시 여부 결정 -->
+    <!-- v-if와 v-show의 차이점은 v-show는 자리는 차지하지만 표시만 되지 않는다. -->
+    <!-- 또한, v-if는 조건문을 사용할 수 있다. -->
 </div>  
 
 <div id='app4'>
     <ol>
-        <li v-for='todo in todos'>
-            {{ todo.text }}
+        <li v-for='todo in todos'> <!-- for문과 같다 -->
+            {{ todo.text }} <!-- todos의 text가 li태그안에 그려짐 -->
         </li>
     </ol>
 </div>
 
 <div id='app5'>
     <p>{{ message }}</p>
-    <button v-on:click='reverseMessage'>reverseMessage</button>     
+    <button v-on:click='reverseMessage'>reverseMessage</button> <!-- click 이벤트가 발생하면 reverseMessage 함수가 호출된다. --> 
+        <!-- v-on:click은 @clcik 과 같다. --> 
 </div>
 
-<div id='app6'>
+<div id='app6' v-cloak> <!-- v-cloak는 Vue 인스턴스가 제대로 실행되기 전 HTML 코드들이 화면 상에 나타나는 걸 막는 역할
+                        아래와 같은 css 속성을 지정해줘야 작동함.
+                        [v-cloak] {
+                            display: none;
+                        } -->
     <p>{{message}}</p>
-    <input v-model='message'>
+    <input v-model='message'> <!-- input에 v-model 디렉티브를 이용해 message를 양방향 바인딩 -->
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

@@ -10,28 +10,30 @@
     <div id='parCom'>
         <h1>Component</h1>
         <ol>
-            <todo-item
-                v-for='item in groceryList'
+            <todo-item 
+                v-for='(item, index) in groceryList'
                 v-bind:todo='item'
-                v-bind:key='item.id'>
+                v-bind:index='index'
+                v-bind:key='index'> <!-- 컴포넌트의 템플릿 --> 
+                <!-- todo에 item, index에 index를 동적으로 바인딩하고 index를 key값에 동적 바인딩한다. -->
             </todo-item>
         </ol>
     </div>
 
 <script>
 Vue.component('todo-item', {
-    props: ['todo'],
-    template: '<li>{{todo.text}}</li>'
+    props: ['todo', 'index'], /* 부모에게서 props로 데이터를 받아옴 */
+    template: '<ul>{{index}} {{todo.text}}</ul>'
 });
 
     var parCom = new Vue ({
         el: '#parCom',
         data: {
             groceryList: [
-                { id:0, text: 'A'},
-                { id:1, text: 'B'},
-                { id:2, text: 'C'},
-                { id:3, text: 'D'},
+                { text: 'A'},
+                { text: 'B'},
+                { text: 'C'},
+                { text: 'D'},
             ]
         }
     });

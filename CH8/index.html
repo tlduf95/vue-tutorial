@@ -26,12 +26,12 @@
 	  data: {
 		  message: '12345'
 	  },
-	  computed: { // 값이 변경되지 않으면 캐싱됨.
+	  computed: { // 값이 변경되지 않으면 캐싱됨. (인자를 넘길 수 없음)
 		  reversedMessage1: function () {
 			return this.message.split('').reverse().join('');
 		  }
 	  },
-	  methods: { // 값이 항상 메소드 호출 후 반환.
+	  methods: { // 값이 항상 메소드 호출 후 반환. (인자 넘기기 가능)
 		  reversedMessage2: function () {
 			return this.message.split('').reverse().join('');
 		  }
