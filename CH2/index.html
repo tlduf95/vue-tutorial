@@ -17,25 +17,39 @@
                 v-bind:key='index'> <!-- 컴포넌트의 템플릿 --> 
                 <!-- todo에 item, index에 index를 동적으로 바인딩하고 index를 key값에 동적 바인딩한다. -->
             </todo-item>
+           <h2 @click=''>Total Qauntity: {{totalQuantity}}</h2> <!-- 개수가 바뀌면 동적으로 computed가 감지해 totalQuantity함수를 호출해서 렌더링 -->
+                                      <!-- 개수가 바뀌지 않으면 computed는 캐싱한다. -->
         </ol>
     </div>
 
 <script>
 Vue.component('todo-item', {
     props: ['todo', 'index'], /* 부모에게서 props로 데이터를 받아옴 */
-    template: '<ul>{{index}} {{todo.text}}</ul>'
+    template:   `<ul> 
+                    {{index}} 
+                    <input v-model='todo.quantity'>quantity: {{todo.quantity}}</input> 
+                    name: {{todo.text}}
+                    <span v-if='todo.quantity === 0'> - SOLD </span>
+                </ul>`
 });
 
     var parCom = new Vue ({
         el: '#parCom',
         data: {
             groceryList: [
-                { text: 'A'},
-                { text: 'B'},
-                { text: 'C'},
-                { text: 'D'},
+                { quantity: 2, text: 'A'},
+                { quantity: 0, text: 'B'},
+                { quantity: 5, text: 'C'},
+                { quantity: 3, text: 'D'},
             ]
-        }
+        },
+        computed: {
+            totalQuantity() {
+                return this.groceryList.reduce((sum, groceryList) => {
+                    return Math.floor(sum + groceryList.quantity);
+                }, 0);
+            }
+        },
     });
 </script>
 
