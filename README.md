@@ -1,4 +1,4 @@
-# hello Vue.js
+# Hello, Vue.js
 
 ### Vue.js 스타일가이드
 https://kr.vuejs.org/v2/style-guide/#%EA%B7%9C%EC%B9%99-%EB%B6%84%EB%A5%98
@@ -8,7 +8,7 @@ https://kr.vuejs.org/v2/api/
 
 
 ## Vue.js란
-웹 UI 즉, View 개발에 초점은 맞춘 프로그레시브 프레임워크  
+웹 UI 즉, View 개발에 초점을 맞춘 프로그레시브 프레임워크  
 
 template 기반과 React.js의 Render Function을 모두 사용 가능.  
 러닝커브가 낮은 문법과 프로젝트 설정.  
@@ -33,10 +33,13 @@ Vue.js는 프레임워크이지만 CDN을 제공하여 가볍게 프로젝트에
 Vue 프레임워크 프로젝트 구축을 위한 CLI 또한 제공되고 있습니다.  
 
 ## Vue.js 핵심
-지금까지 프로젝트에 쓰인 javascript 및 jQuery는 직접 DOM에 접근하여 조작하였지만,  
-이러한 방식은 DOM에 접근하여 조작할 때마다 모든 DOM 트리를 순회하고 렌더링하기 때문에 속도가 저하됐습니다.  
 
-Vue.js는 DOM 접근 및 조작을 Vue 코어 라이브러리에서 모두 처리해주고  
+### DOM 제어
+지금까지 프로젝트에 쓰인 javascript 및 jQuery는 직접 DOM에 접근하여 조작했습니다.  
+이러한 방식은 DOM에 접근하여 조작할 때마다 모든 DOM 트리를 순회하고 렌더링하기 때문에 속도가 저하되고,  
+사이드이펙트가 발생할 확률이 높아졌습니다.  
+
+Vue는 DOM 접근 및 조작을 Vue 코어 라이브러리에서 모두 처리해주고  
 개발자는 DOM에 연결된 데이터만을 조작하면 되기 때문에 데이터 기반의 개발이 가능해졌습니다.  
 
 ```
@@ -54,8 +57,17 @@ Vue는 위처럼 단순히 데이터를 변경만 해주면 Vue가 데이터 변
 ### Vue.js 반응형 동작원리
 <img src='./img/9954F83E5AD97B0F2B.png'>
 
+### React와 Angualr의 장점
+Angualr에게는 없는 virtual DOM과 React에게 없는 양방향 바인딩을 제공합니다.  
+Vue는 전체 DOM 트리를 순회하지 않고 DOM 변경사항을 virtual DOM과 비교한 후, 바뀐 부분만 실제 DOM에 반영합니다.  
+또한 React에서는 따로 함수를 만들어 사용해야 하는 양방향 바인딩을 v-model이라는 디렉티브로 간단하게 제공합니다.  
+
+### 컴포넌트 단위의 개발
+
+
 ## Vue.js / React.js
 현재 자바스크립트의 대표적인 프레임워크로는 Vue.js와 React.js가 있습니다.  
+짧은 코드를 통해 두 프레임워크가 대략 어떻게 동작하는지 비교해보겠습니다.  
 
 ### React.js
 ```
@@ -105,6 +117,10 @@ DOM을 어떻게 다시 렌더링할지 결정합니다.
 ```
 
 반면 Vue는 HTML태그에 디렉티브를 이용하여 별도의 명령없이 데이터가 변경되면 반응적으로 렌더링됩니다.  
+Vue 또한 별도의 작업을 통해 데이터를 불변상태로 유지하는 것이 가능합니다.  
+
+<u>기본적으로 Vue는 데이터 객체를 생성한 후에 data를 자유롭게 업데이트가 가능하고,  
+React는 state 객체를 생성한 후에 업데이트를 하려면 좀 더 작업을 해야합니다.</u>
 
 ### Vue.js 라이프 사이클
 <img src='./img/1_tnSXRrpLBYmfHnIagITlcg.png'>
