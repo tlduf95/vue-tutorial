@@ -51,6 +51,9 @@ a.text = 'tlab'
 
 Vue는 위처럼 단순히 데이터를 변경만 해주면 Vue가 데이터 변경을 감지하고 화면을 재렌더링합니다.  
 
+### Vue.js 반응형 동작원리
+<img src='./img/9954F83E5AD97B0F2B.png'>
+
 ## Vue.js / React.js
 현재 자바스크립트의 대표적인 프레임워크로는 Vue.js와 React.js가 있습니다.  
 
