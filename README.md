@@ -49,6 +49,7 @@ Vue는 위처럼 단순히 데이터를 변경만 해주면 Vue가 데이터 변
 현재 자바스크립트의 대표적인 프레임워크로는 Vue.js와 React.js가 있습니다.
 
 ### React.js
+```
 class Counter extends React.Component {
   constructor(props) {
     super(props);
@@ -69,6 +70,7 @@ class Counter extends React.Component {
       </div>
     );
   };
+```
 
 위의 코드는 버튼을 누를 때마다 number가 1씩 증가하는 단순한 코드입니다.
 React는 state라는 불변의 속성을 가집니다.
@@ -76,6 +78,7 @@ React는 state의 변경을 자동으로 감지하지 못하기 때문에 setSta
 DOM을 어떻게 다시 렌더링할지 결정합니다.
 
 ### Vue.js
+```
   <body>
     <div id='app'>
         <h5>Counter : {{number}}</h5>
@@ -90,6 +93,7 @@ DOM을 어떻게 다시 렌더링할지 결정합니다.
         el: '#app',
         data: data
     });
+```
 
 반면 Vue는 HTML태그에 디렉티브를 이용하여 별도의 명령없이 데이터가 변경되면 반응적으로 렌더링됩니다.
 
