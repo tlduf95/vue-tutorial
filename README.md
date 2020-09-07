@@ -148,7 +148,7 @@ Vue는 직관적인 라이프 사이클을 가지고 있습니다.
 -BeforeDestroy: 인스턴스 제거 직전에 호출.  
 -Destroyed: 인스턴스 제거 완료 후 호출. 연관된 이벤트 리스너, 디렉디브 등이 해제.  
 
-<img src='./img/1_tnSXRrpLBYmfHnIagITlcg.png'>
+<img src='./img/1_tnSXRrpLBYmfHnIagITlcg.png' height=50%>
 
 ### 공식 라이브러리 및 문서화
 
