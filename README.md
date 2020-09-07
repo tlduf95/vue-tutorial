@@ -52,7 +52,8 @@ document.getElementById('a').textContent = 'tlab'
 a.text = 'tlab'
 ```
 
-Vue는 위처럼 단순히 데이터를 변경만 해주면 Vue가 데이터 변경을 감지하고 화면을 재렌더링합니다.  
+위처럼 단순히 데이터를 변경만 해주면 Vue가 데이터 변경을 감지하고 화면을 재렌더링합니다.  
+Vue는 매우 직관적이며 단순합니다.  
 
 ### Vue.js 반응형 동작원리
 <img src='./img/9954F83E5AD97B0F2B.png'>
@@ -123,5 +124,24 @@ Vue 또한 별도의 작업을 통해 데이터를 불변상태로 유지하는 
 React는 state 객체를 생성한 후에 업데이트를 하려면 좀 더 작업을 해야합니다.</u>
 
 ### Vue.js 라이프 사이클
+Vue는 직관적인 라이프 사이클을 가지고 있습니다.  
+그리고 React와 마찬가지로 라이프 사이클 훅을 가지고 있어, 상태 관리 주기에 맞춰 개발이 가능합니다.  
+
+#### Creation: 컴포넌트 초기화 단계
+-BeforeCreate: 가장 먼저 실행이 됨. 인스턴스의 data, event 객체는 접근할 수 없음.  
+-Create: data, event 객체가 준비 완료된 상태이므로 처리가 가능하다.  
+
+#### Mounting: DOM 작성 단계
+-BeforeMount: 템플릿 및 코드들이 렌더링 되기 직전에 호출됨. 거의 사용하지 않음.  
+-Mounted: 컴포넌트, 템플릿, DOM이 모두 준비된 상태. 이 상태에서 ajax 처리 가능.  
+
+#### Updating: 상태 변화로 인한 렌더링 단계
+-BeforeUpdate: 컴포넌트 상태 변화가 일어나면 다시 DOM이 렌더링 되는데 그 전에 호출.  
+-Updated: 상태 변화 후 렌더링이 완료되면 실행. 여기서 상태 값이 변경되면 무한루프에 빠짐.  
+
+#### Destruction: 소멸 단계
+-BeforeDestroy: 인스턴스 제거 직전에 호출.  
+-Destroyed: 인스턴스 제거 완료 후 호출. 연관된 이벤트 리스너, 디렉디브 등이 해제.  
+
 <img src='./img/1_tnSXRrpLBYmfHnIagITlcg.png'>
 
