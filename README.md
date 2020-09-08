@@ -1,12 +1,5 @@
 # Hello, Vue.js
 
-### Vue.js 스타일가이드
-https://kr.vuejs.org/v2/style-guide/#%EA%B7%9C%EC%B9%99-%EB%B6%84%EB%A5%98
-
-### Vue.js API 문서
-https://kr.vuejs.org/v2/api/
-
-
 ## Vue.js란
 웹 UI 즉, View 개발에 초점을 맞춘 프로그레시브 프레임워크  
 
@@ -128,6 +121,11 @@ Vue 또한 별도의 작업을 통해 데이터를 불변상태로 유지하는 
 <u>기본적으로 Vue는 데이터 객체를 생성한 후에 data를 자유롭게 업데이트가 가능하고,  
 React는 state 객체를 생성한 후에 업데이트를 하려면 좀 더 작업을 해야합니다.</u>
 
+위 코드처럼 Vue는 고전적인 웹 개발 패러다임을 따라가고 있기 때문에 직관적이며, HTML태그 위에 Vue디렉티브와 선언적 렌더링을 이용해  
+데이터를 바인딩하고 조작합니다.  
+그리고 HTML, JS, CSS를 한 파일에서 관리하는 싱글 파일 컴포넌트를 지원하여, .Vue 컴포넌트 파일로만 프로젝트를 구성할 수도 있습니다.
+HTML 지식을 좀 더 공부해야하고, React의 JSX처럼 개발자의 자유도가 높진 않지만 Vue는 다른 프레임워크보다 엄청난 호환성을 가지고 있습니다.
+
 ### Vue.js 라이프 사이클
 Vue는 직관적인 라이프 사이클을 가지고 있습니다.  
 그리고 React와 마찬가지로 라이프 사이클 훅을 가지고 있어, 상태 관리 주기에 맞춰 개발이 가능합니다.  
@@ -151,5 +149,17 @@ Vue는 직관적인 라이프 사이클을 가지고 있습니다.
 <img src='./img/1_tnSXRrpLBYmfHnIagITlcg.png' height='50%'>
 
 ### 공식 라이브러리 및 문서화
+Vue에서는 전역 상태를 관리하는 Vuex와 SPA 구현을 도와주는 vue-router라는 서드파티 라이브러리를 공식적으로 지원합니다.
+주요 라이브러리가 안정적으로 관리되고 문서화가 잘 되어 있다는 것을 뜻합니다.
+그리고 대부분의 문서가 한글화가 되어 있고, 스타일 가이드 등, 다양한 가이드를 제공합니다.
+
+#### Vue.js 시작하기
+https://kr.vuejs.org/v2/guide/index.html
+
+#### Vue.js 스타일가이드
+https://kr.vuejs.org/v2/style-guide/#%EA%B7%9C%EC%B9%99-%EB%B6%84%EB%A5%98
+
+#### Vue.js API 문서
+https://kr.vuejs.org/v2/api/
 
 
