@@ -14,7 +14,7 @@
 			<p>Expression: {{message.split('').reverse().join('')}}</p>
 			<p>Computed: {{reversedMessage1}}</p>
 			<p>Method: {{reversedMessage2()}}</p>
-			<p><input v-model='meesage'></p>
+			<p><input v-model='message'></p>
 		</div>
 	</div>
 
@@ -28,11 +28,13 @@
 	  },
 	  computed: { // 값이 변경되지 않으면 캐싱됨. (인자를 넘길 수 없음)
 		  reversedMessage1: function () {
+			console.log('컴퓨티드 호출');
 			return this.message.split('').reverse().join('');
 		  }
 	  },
 	  methods: { // 값이 항상 메소드 호출 후 반환. (인자 넘기기 가능)
 		  reversedMessage2: function () {
+			console.log('메소드 호출');
 			return this.message.split('').reverse().join('');
 		  }
 	  }

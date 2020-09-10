@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id='app'>
+        <button v-bind:class='id' @keypress.enter='getData()'>get user</button>
+        <div>
+            {{ users }}
+        </div>  
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+        new Vue ({
+            el: '#app',
+            data: {
+                users: [],
+                id: 0,
+            },
+            methods: {      
+                getData: function(event) {
+                        // this는 인스턴스를 가르킴, 즉 vm은 인스턴스
+                        var vm = this;
+                        axios.get('https://jsonplaceholder.typicode.com/users/') // jsonplaceholder API 테스트 사이트에서 호출
+                        .then( function (response) {
+                            // 성공시 then에서 response로 데이터 가져옴
+                            console.log(response.data);
+                            vm.users = response.data;
+                        })
+                        .catch( function (error) {
+                            // 실패시 처리
+                            console.log(error);
+                        });
+                    }
+                
+            }
+        });
+    </script>
+
+</body>
+</html>
