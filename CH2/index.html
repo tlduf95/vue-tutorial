@@ -45,6 +45,7 @@ Vue.component('todo-item', {
         },
         computed: {
             totalQuantity() {
+                console.log('총 개수');
                 return this.groceryList.reduce((sum, groceryList) => {
                     return Math.floor(sum + groceryList.quantity);
                 }, 0);
